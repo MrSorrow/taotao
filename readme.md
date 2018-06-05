@@ -12,6 +12,19 @@
 10. 购物车、订单系统；
 11. Quartz任务调度框架；项目部署、项目总结、面试中的问题。
 
+## 技术选型
+1. 数据库：mysql
+2. Dao层：mybatis、数据库连接池（德鲁伊druid）
+3. 缓存：redis
+4. 搜索：solr
+5. Service层：spring
+6. 表现层：springmvc、jstl、EasyUI、jsp、freemaker
+7. 图片服务器：FastDFS（分布式文件系统）
+8. 反向代理服务器：nginx
+9. 定时器：Quartz
+10. Web服务器：tomcat
+11. 工程管理：maven
+
 ## 环境配置
 1. Win10
 2. Java 1.8
@@ -22,7 +35,7 @@
 ## 教程
 ### 聚合工程搭建
 1. 参考文档：[文章1](https://blog.csdn.net/wb8878/article/details/77162078)、[文章2](https://blog.csdn.net/for_my_life/article/details/78939078)、[文章3](https://blog.csdn.net/yerenyuan_pku/article/details/72669269)；
-2. 注意taotao-parent的依赖是<dependencyManagement></dependencyManagement>包裹的；
+2. 注意taotao-parent的依赖是\<dependencyManagement>\</dependencyManagement>包裹的；
 3. 运行时需要用maven来install taotao-parent和taotao-common。
 
 ### 提交github仓库
