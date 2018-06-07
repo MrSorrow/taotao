@@ -41,4 +41,8 @@
 ### 提交github仓库
 1. 参考文档：[git提交到github](https://blog.csdn.net/a695017449/article/details/26103761)
 
-###
+### SSM整合测试
+1. taotao-manager-web缺失java和resources目录：[文章](https://blog.csdn.net/u014756827/article/details/52497572)
+2. mapper文件拷贝缺失，参考：[文章](https://blog.csdn.net/xiaoshubiao/article/details/78563037)。其中拷贝到resources目录方法，需要新建和包名一致的目录并拷贝。
+3. 项目启动不起来，因为逆向工程生成的代码有问题。参考：[文章](https://bbs.csdn.net/topics/392273297)。索性不用逆向工程，纯手写！
+4. Idea @Autowired取消提示：[文章](https://blog.csdn.net/qqyouhappy/article/details/52366198)
