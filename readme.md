@@ -57,3 +57,7 @@
 
 ### 添加商品类目选择
 1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72786989)
+2. 默认id参数
+
+### 图片服务器
+1. 为什么要额外架设图片服务器：集群的图片没有同步
