@@ -19,4 +19,8 @@
         from tb_item
         where id = #{id,jdbcType=BIGINT}
     </select>
+    <select id="getItemList" resultMap="BaseResultMap">
+        select *
+        from tb_item
+    </select>
 </mapper>

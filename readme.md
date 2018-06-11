@@ -52,4 +52,5 @@
 1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72773063)
 2. 静态资源映射问题解决。
 
-### 分页
+### 商品列表分页展示
+1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72774381)
