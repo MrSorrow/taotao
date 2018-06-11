@@ -54,3 +54,6 @@
 
 ### 商品列表分页展示
 1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72774381)
+
+### 添加商品类目选择
+1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72786989)
