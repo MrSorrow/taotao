@@ -33,6 +33,7 @@
 5. IDEA 2017.2
 
 ## 教程
+总体参考专栏博客：[项目实战之淘淘商城](https://blog.csdn.net/column/details/15737.html?&page=5)
 ### 聚合工程搭建
 1. 参考文档：[文章1](https://blog.csdn.net/wb8878/article/details/77162078)、[文章2](https://blog.csdn.net/for_my_life/article/details/78939078)、[文章3](https://blog.csdn.net/yerenyuan_pku/article/details/72669269)；
 2. 注意taotao-parent的依赖是\<dependencyManagement>\</dependencyManagement>包裹的；
@@ -46,3 +47,9 @@
 2. mapper文件拷贝缺失，参考：[文章](https://blog.csdn.net/xiaoshubiao/article/details/78563037)。其中拷贝到resources目录方法，需要新建和包名一致的目录并拷贝。
 3. 项目启动不起来，因为逆向工程生成的代码有问题。参考：[文章](https://bbs.csdn.net/topics/392273297)。索性不用逆向工程，纯手写！
 4. Idea @Autowired取消提示：[文章](https://blog.csdn.net/qqyouhappy/article/details/52366198)
+
+### 首页展示
+1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72773063)
+2. 静态资源映射问题解决。
+
+### 分页
