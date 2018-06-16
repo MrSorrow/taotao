@@ -1,6 +1,6 @@
 package guo.ping.taotao.controller;
 
-import guo.ping.taotao.common.pojo.PictureResult;
+import guo.ping.taotao.common.utils.JsonUtils;
 import guo.ping.taotao.service.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class PictureController {
 
     @RequestMapping("/upload")
     @ResponseBody
-    public PictureResult uploadFile(MultipartFile uploadFile) {  // 参数必须是为uploadFile
-        return pictureService.upload(uploadFile);
+    public String uploadFile(MultipartFile uploadFile) {  // 参数必须是为uploadFile
+        return JsonUtils.objectToJson(pictureService.upload(uploadFile));
     }
 }
