@@ -1,4 +1,4 @@
-package guo.ping.taotao.pagehelper;
+package guo.ping.taotao.controller;
 
 import guo.ping.taotao.common.pojo.EasyUITreeNode;
 import guo.ping.taotao.service.ItemCatService;

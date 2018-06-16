@@ -1,4 +1,4 @@
-package guo.ping.taotao.pagehelper;
+package guo.ping.taotao.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

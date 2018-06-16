@@ -26,10 +26,10 @@
 11. 工程管理：maven
 
 ## 环境配置
-1. Win10
+1. Win10、CentOS6.4
 2. Java 1.8
 3. Tomcat 7
-4. Mysql 5.7
+4. Mysql 5.6
 5. IDEA 2017.2
 
 ## 教程
@@ -49,15 +49,17 @@
 4. Idea @Autowired取消提示：[文章](https://blog.csdn.net/qqyouhappy/article/details/52366198)
 
 ### 首页展示
-1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72773063)
+1. 参考文档：[展示后台管理页面](https://blog.csdn.net/yerenyuan_pku/article/details/72773063)
 2. 静态资源映射问题解决。
 
 ### 商品列表分页展示
-1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72774381)
+1. 参考文档：[MyBatis分页插件(PageHelper)的使用以及商品列表展示](https://blog.csdn.net/yerenyuan_pku/article/details/72774381)
 
 ### 添加商品类目选择
-1. 参考文档：[文章](https://blog.csdn.net/yerenyuan_pku/article/details/72786989)
+1. 参考文档：[商品类目选择的实现](https://blog.csdn.net/yerenyuan_pku/article/details/72786989)
 2. 默认id参数
 
 ### 图片服务器
-1. 为什么要额外架设图片服务器：集群的图片没有同步
+1. 为什么要额外架设图片服务器：集群的图片没有同步;
+2. FastDFS搭建图片服务器：JavaEE进阶——[CentOS开发环境搭建](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80679324)、[Nginx反向代理负载均衡](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80682470)、[FastDFS实现分布式文件系统](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80714435)
+3. service和controller实现：[实现图片上传功能](https://blog.csdn.net/yerenyuan_pku/article/details/72808000)
