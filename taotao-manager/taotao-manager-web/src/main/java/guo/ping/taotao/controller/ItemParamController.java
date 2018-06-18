@@ -27,4 +27,10 @@ public class ItemParamController {
     public TaotaoResult getItemParamByCid(@PathVariable Long cid) {
         return itemParamService.getItemParamByCid(cid);
     }
+
+    @RequestMapping("/save/{cid}")
+    @ResponseBody
+    public TaotaoResult insertItemParam(@PathVariable Long cid, String paramData) {
+        return itemParamService.insertItemParam(cid, paramData);
+    }
 }

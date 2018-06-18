@@ -11,6 +11,7 @@ import guo.ping.taotao.service.ItemParamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -39,5 +40,20 @@ public class ItemParamServiceImpl implements ItemParamService {
             return TaotaoResult.ok(itemParam);
         }
         return TaotaoResult.ok();
+    }
+
+    @Override
+    public TaotaoResult insertItemParam(Long cid, String paramData) {
+        TbItemParam tbItemParam = new TbItemParam();
+        tbItemParam.setItemCatId(cid);
+        tbItemParam.setParamData(paramData);
+        tbItemParam.setCreated(new Date());
+        tbItemParam.setUpdated(new Date());
+        int result = tbItemParamMapper.insertItemParam(tbItemParam);
+        if (result > 0) {
+            return TaotaoResult.ok();
+        } else {
+            return TaotaoResult.build(400, "新增商品规格参数失败");
+        }
     }
 }

@@ -10,4 +10,6 @@ public interface TbItemParamMapper {
     List<TbItemParamAndName> getItemParamList();
 
     TbItemParam getItemParamByCid(Long cid);
+
+    Integer insertItemParam(TbItemParam tbItemParam);
 }
