@@ -92,7 +92,7 @@
 			var trs = $(e).find("tr");
 			var group = trs.eq(0).text();
 			var ps = [];
-			for(var i = 1;i<trs.length;i++){
+			for(var i = 1; i<trs.length; i++) {
 				var tr = trs.eq(i);
 				ps.push({
 					"k" : $.trim(tr.find("td").eq(0).find("span").text()),
