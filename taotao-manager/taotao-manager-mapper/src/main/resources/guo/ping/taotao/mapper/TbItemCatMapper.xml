@@ -18,4 +18,10 @@
         WHERE parent_id = #{parentId, jdbcType=BIGINT}
     </select>
 
+    <select id="getItemCatNameById" parameterType="java.lang.Long" resultType="java.lang.String">
+        SELECT name
+        FROM tb_item_cat
+        WHERE id = #{id}
+    </select>
+
 </mapper>

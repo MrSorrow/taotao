@@ -8,7 +8,17 @@
         <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <select id="getItemParamList" resultMap="BaseResultMap">
+    <resultMap id="ItemParamListResultMap" type="guo.ping.taotao.pojo.TbItemParamAndName">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="item_cat_id" property="itemCatId" jdbcType="BIGINT"/>
+        <result column="param_data" property="paramData" jdbcType="LONGVARCHAR" />
+        <result column="created" property="created" jdbcType="TIMESTAMP"/>
+        <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
+        <association property="itemCatName" column="item_cat_id" javaType="java.lang.String"
+                     select="guo.ping.taotao.mapper.TbItemCatMapper.getItemCatNameById" />
+    </resultMap>
+
+    <select id="getItemParamList" resultMap="ItemParamListResultMap">
         SELECT *
         FROM tb_item_param
     </select>

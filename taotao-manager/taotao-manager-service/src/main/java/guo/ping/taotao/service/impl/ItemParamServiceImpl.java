@@ -6,6 +6,7 @@ import guo.ping.taotao.common.pojo.EasyUIDataGridResult;
 import guo.ping.taotao.common.pojo.TaotaoResult;
 import guo.ping.taotao.mapper.TbItemParamMapper;
 import guo.ping.taotao.pojo.TbItemParam;
+import guo.ping.taotao.pojo.TbItemParamAndName;
 import guo.ping.taotao.service.ItemParamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,9 +22,9 @@ public class ItemParamServiceImpl implements ItemParamService {
     @Override
     public EasyUIDataGridResult getItemParamList(int page, int rows) {
         PageHelper.startPage(page, rows);
-        List<TbItemParam> itemParamList = tbItemParamMapper.getItemParamList();
+        List<TbItemParamAndName> itemParamList = tbItemParamMapper.getItemParamList();
 
-        PageInfo<TbItemParam> pageInfo = new PageInfo<>(itemParamList);
+        PageInfo<TbItemParamAndName> pageInfo = new PageInfo<>(itemParamList);
         EasyUIDataGridResult easyUIDataGridResult = new EasyUIDataGridResult();
         easyUIDataGridResult.setRows(itemParamList);
         easyUIDataGridResult.setTotal(pageInfo.getTotal());
