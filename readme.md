@@ -63,3 +63,11 @@
 1. 为什么要额外架设图片服务器：集群的图片没有同步;
 2. FastDFS搭建图片服务器：JavaEE进阶——[CentOS开发环境搭建](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80679324)、[Nginx反向代理负载均衡](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80682470)、[FastDFS实现分布式文件系统](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80714435)
 3. service和controller实现：[实现图片上传功能](https://blog.csdn.net/yerenyuan_pku/article/details/72808000)
+4. 添加Jar包时，需要重新安装parent、common、manager工程。
+
+### 添加商品提交表单
+1. 参考文章：[实现添加商品功能](https://blog.csdn.net/yerenyuan_pku/article/details/72810937)
+
+### 商品规格参数
+1. 为何使用单表存储json冗余方式取代多表关联？[商品规格的数据库设计和实现流程](https://blog.csdn.net/qq_40369829/article/details/79515596)
+2. 实现方式：[商品规格参数的表结构设计](https://blog.csdn.net/qq_1017097573/article/details/68501687)

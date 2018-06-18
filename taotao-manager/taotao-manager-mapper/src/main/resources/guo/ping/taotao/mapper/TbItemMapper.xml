@@ -23,4 +23,9 @@
         select *
         from tb_item
     </select>
+    <insert id="insert" parameterType="guo.ping.taotao.pojo.TbItem">
+        INSERT INTO tb_item
+        (id, title, sell_point, price, num, barcode, image, cid, created, updated)
+        VALUES (#{id}, #{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{image}, #{cid}, #{created}, #{updated})
+    </insert>
 </mapper>

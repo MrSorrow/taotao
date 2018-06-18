@@ -9,4 +9,6 @@ public interface TbItemMapper {
     TbItem selectByPrimaryKey(Long id);
 
     List<TbItem> getItemList();
+
+    void insert(TbItem item);
 }
