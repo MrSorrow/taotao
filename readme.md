@@ -83,3 +83,7 @@
 1. 创建两个webapp的maven工程，配置参见最开始项目搭建过程。
 2. 修改tomcat端口号。
 
+### 前端首页显示
+1. 参考文档：[前台系统工程搭建](https://blog.csdn.net/yerenyuan_pku/article/details/72825533)
+2. 打包跳过测试：[IDEA中maven打包跳过Junit Test](https://www.cnblogs.com/ningheshutong/p/6380933.html)
+
