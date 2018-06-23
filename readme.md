@@ -79,5 +79,7 @@
 3. 保存具体商品规格参数：在商品表单提交之前，先把规格参数的信息，转换成json数据插入表中。
 4. 展示规格参数
 
-### 创建taotao-rest工程
-1. 创建一个webapp的maven工程，配置参见最开始项目搭建过程
+### 创建taotao-rest、taotao-portal工程
+1. 创建两个webapp的maven工程，配置参见最开始项目搭建过程。
+2. 修改tomcat端口号。
+

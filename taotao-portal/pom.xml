@@ -10,10 +10,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>taotao-rest</artifactId>
+    <artifactId>taotao-portal</artifactId>
     <packaging>war</packaging>
 
-    <name>taotao-rest</name>
+    <name>taotao-portal</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -24,10 +24,10 @@
     </properties>
 
     <dependencies>
-        <!-- 添加数据库访问工程依赖 -->
+        <!-- 添加pojo -->
         <dependency>
             <groupId>guo.ping</groupId>
-            <artifactId>taotao-manager-mapper</artifactId>
+            <artifactId>taotao-manager-pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!-- Spring -->
@@ -61,6 +61,10 @@
         </dependency>
         <!-- JSP相关 -->
         <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
@@ -79,11 +83,10 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <port>8081</port>
+                    <port>8082</port>
                     <path>/</path>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
