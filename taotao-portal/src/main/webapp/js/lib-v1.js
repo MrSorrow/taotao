@@ -1170,7 +1170,7 @@ $.extend(jdModelCallCenter, {autoLocation: function(a) {
 };
 //http://d.360buy.com/configs/get?type=JSON
 var category = {OBJ: $("#_JD_ALLSORT"),
-		URL_Serv: "http://rest.taotao.com/rest/item/cat/list?callback=category.getDataService",
+		URL_Serv: "http://localhost:8081/rest/item/cat/list?callback=category.getDataService",
 		URL_BrandsServ: "http://d.360buy.com/brandVclist2/get?callback=category.getBrandService&ids=a,9211,9212^b,9214,9215^c,9217,9218^d,9220,9221^e,9223,9224^f,9226,9227^g,9229,9230^h,9232,9233^m,9235,9236^i,9238,9239^j,9241,9242^p,9244,9245^k,9247,9248^l,9250,9251",
 		FN_GetLink: function(a, b) {
 	        var c, d;
@@ -1204,9 +1204,9 @@ var category = {OBJ: $("#_JD_ALLSORT"),
     	//使用jsonp来实现跨域请求
         $.getJSONP(this.URL_Serv, category.getDataService);
     	//直接使用ajax请求json数据
-    	/*$.getJSON(this.URL_Serv, function(json){
-    		category.getDataService(json);
-    	});*/
+    	// $.getJSON(this.URL_Serv, function(json){
+    	// 	category.getDataService(json);
+    	// });
     },FN_GetBrands: function() {
       //  $.getJSONP(this.URL_BrandsServ, category.getBrandService)
     },FN_RefactorJSON: function(a, b) {
