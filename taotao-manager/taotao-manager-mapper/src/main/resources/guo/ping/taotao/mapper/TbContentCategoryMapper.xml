@@ -12,9 +12,30 @@
         <result column="updated" property="updated" jdbcType="TIMESTAMP"/>
     </resultMap>
 
+    <select id="selectTbContentCatById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT *
+        FROM tb_content_category
+        WHERE id = #{id}
+    </select>
+
     <select id="selectTbContentCatsByParentId" parameterType="java.lang.Long" resultMap="BaseResultMap">
         SELECT *
         FROM tb_content_category
         WHERE parent_id = #{parentId}
     </select>
+
+    <insert id="insertCategory" parameterType="guo.ping.taotao.pojo.TbContentCategory">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT last_insert_id();
+        </selectKey>
+        INSERT INTO tb_content_category
+        (parent_id, name, status, sort_order, is_parent, created, updated) VALUES
+        (#{parentId}, #{name}, #{status}, #{sortOrder}, #{isParent}, #{created}, #{updated})
+    </insert>
+
+    <update id="updateContentCategoryById" parameterType="guo.ping.taotao.pojo.TbContentCategory">
+        UPDATE tb_content_category SET parent_id = #{parentId}, name = #{name}, status = #{status},
+        sort_order = #{sortOrder}, is_parent = #{isParent}, updated = #{updated}
+        WHERE id = #{id}
+    </update>
 </mapper>
