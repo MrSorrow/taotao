@@ -3,6 +3,7 @@ package guo.ping.taotao.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import guo.ping.taotao.common.pojo.EasyUIDataGridResult;
+import guo.ping.taotao.common.pojo.TaotaoResult;
 import guo.ping.taotao.mapper.TbContentMapper;
 import guo.ping.taotao.pojo.TbContent;
 import guo.ping.taotao.service.ContentService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,5 +36,13 @@ public class ContentServiceImpl implements ContentService {
         easyUIDataGridResult.setRows(tbContents);
         easyUIDataGridResult.setTotal(pageInfo.getTotal());
         return easyUIDataGridResult;
+    }
+
+    @Override
+    public TaotaoResult insertContent(TbContent tbContent) {
+        tbContent.setCreated(new Date());
+        tbContent.setUpdated(new Date());
+        tbContentMapper.insertContent(tbContent);
+        return TaotaoResult.ok();
     }
 }

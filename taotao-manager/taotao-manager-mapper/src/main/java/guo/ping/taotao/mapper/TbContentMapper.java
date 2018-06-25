@@ -8,4 +8,6 @@ public interface TbContentMapper {
     List<TbContent> getContentListByCategoryId(Long categoryId);
 
     List<TbContent> getAllContentList();
+
+    void insertContent(TbContent tbContent);
 }

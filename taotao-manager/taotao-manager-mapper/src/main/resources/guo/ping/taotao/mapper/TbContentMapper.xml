@@ -27,4 +27,10 @@
         SELECT id, title, sub_title, title_desc, url, pic, pic2, created, updated
         FROM tb_content
     </select>
+
+    <insert id="insertContent" parameterType="guo.ping.taotao.pojo.TbContent">
+        INSERT INTO tb_content
+        (category_id, title, sub_title, title_desc, url, pic, pic2, content, created, updated) VALUES
+        (#{categoryId}, #{title}, #{subTitle}, #{titleDesc}, #{url}, #{pic}, #{pic2}, #{content}, #{created}, #{updated})
+    </insert>
 </mapper>
