@@ -96,3 +96,8 @@
 3. 内容详情分页查询
 4. 新增内容
 5. 展示轮播图
+
+### Redis缓存
+1. CentOS6.4搭建Redis单机与集群
+2. 利用Redis实现缓存功能
+3. 参考文档：[Redis集群搭建与缓存实现](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80834857)
