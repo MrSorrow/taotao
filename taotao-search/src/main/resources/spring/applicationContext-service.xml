@@ -11,4 +11,9 @@
     <!-- 包扫描器，扫描带@Service注解的类 -->
     <context:component-scan base-package="guo.ping.taotao.search.service"/>
 
+    <!-- 配置单机版SolrServer -->
+    <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+        <constructor-arg name="baseURL" value="http://192.168.74.130:8080/solr" />
+    </bean>
+
 </beans>
