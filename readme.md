@@ -101,3 +101,6 @@
 1. CentOS6.4搭建Redis单机与集群
 2. 利用Redis实现缓存功能
 3. 参考文档：[Redis集群搭建与缓存实现](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80834857)
+
+### 创建taotao-search工程
+1. 创建一个个webapp的maven工程，类似taotao-rest；
