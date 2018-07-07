@@ -105,4 +105,5 @@
 ### 创建taotao-search工程
 1. 创建一个个webapp的maven工程，类似taotao-rest；
 2. 搭建Solr服务；
-3. 完成商品信息导入。
+3. 完成商品信息导入；
+4. 搜索服务发布的实现；
