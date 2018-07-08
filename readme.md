@@ -103,7 +103,11 @@
 3. 参考文档：[Redis集群搭建与缓存实现](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/80834857)
 
 ### 创建taotao-search工程
-1. 创建一个个webapp的maven工程，类似taotao-rest；
+1. 创建一个webapp的maven工程，类似taotao-rest；
 2. 搭建Solr服务；
 3. 完成商品信息导入；
-4. 搜索服务发布的实现；
+4. 搜索服务发布的实现。
+
+### 前端实现搜索
+1. 利用HttpClient调用taotao-search服务；
+2. 解决get参数乱码以及修改pojo的get方法解决图片显示问题。
