@@ -19,4 +19,8 @@
         INSERT INTO tb_item_param_item
         (item_id, param_data, created, updated) VALUES (#{itemId}, #{paramData}, #{created}, #{updated})
     </insert>
+
+    <select id="selectItemParamByItemId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT * FROM tb_item_param_item WHERE item_id = #{itemId}
+    </select>
 </mapper>

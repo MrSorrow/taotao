@@ -111,3 +111,11 @@
 ### 前端实现搜索
 1. 利用HttpClient调用taotao-search服务；
 2. 解决get参数乱码以及修改pojo的get方法解决图片显示问题。
+
+### Slor集群
+1. ZooKeeper集群搭建；
+2. Tomcat(Slor)集群搭建。
+
+### 商品详情页
+1. 发布服务：获取商品基本信息、商品描述和规格参数
+2. 
