@@ -120,3 +120,9 @@
 1. 发布服务：获取商品基本信息、商品描述和规格参数
 2. 前端延迟按需加载展示商品详情页面
 3. FreeMarker实现网页静态化——[FreeMarker模板引擎](https://blog.csdn.net/bskfnvjtlyzmv867/article/details/81099114)
+
+### 单点登录
+1. 创建单点登录系统taotao-sso，类似taotao-rest
+2. 发布服务
+3. 前台系统调用单点登录系统
+4. Session共享

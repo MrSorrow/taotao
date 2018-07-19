@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <!-- 包扫描器，扫描带@Service注解的类 -->
+    <context:component-scan base-package="guo.ping.taotao.sso.service"/>
+
+    <!--&lt;!&ndash;配置单击版Redis&ndash;&gt;-->
+    <!--<bean id="jedisPool" class="redis.clients.jedis.JedisPool">-->
+        <!--<constructor-arg name="host" value="192.168.74.128" />-->
+        <!--<constructor-arg name="port" value="6379" />-->
+    <!--</bean>-->
+
+    <!--<bean id="jedisClientSingle" class="guo.ping.taotao.sso.component.impl.JedisClientSingle" />-->
+    <!--&lt;!&ndash; end &ndash;&gt;-->
+
+    <!--配置集群版Redis-->
+
+    <!--redisPool配置 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!--最大连接数 -->
+        <property name="maxTotal" value="30"/>
+        <!--最大空闲连接数 -->
+        <property name="maxIdle" value="10"/>
+        <!--每次释放连接的最大数目 -->
+        <property name="numTestsPerEvictionRun" value="1024"/>
+        <!--释放连接的扫描间隔(单位:毫秒) -->
+        <property name="timeBetweenEvictionRunsMillis" value="30000"/>
+        <!--连接最小空闲时间(单位:毫秒) -->
+        <property name="minEvictableIdleTimeMillis" value="100000"/>
+        <!--连接空闲多久后释放,当空闲时间大于该值并且空闲连接大于最大空闲连接时直接释放连接 -->
+        <property name="softMinEvictableIdleTimeMillis" value="10000"/>
+        <!--获取连接时最大等待毫秒数,如果该值小于0,则阻塞不确定的时长,默认值-1 -->
+        <property name="maxWaitMillis" value="1500"/>
+        <!--在获取连接时检查连接有效性,默认为false -->
+        <property name="testOnBorrow" value="false"/>
+        <!--在连接空闲时检查连接有效性,默认为false -->
+        <property name="testWhileIdle" value="true"/>
+        <!--连接耗尽是否阻塞,false代表抛异常,true代表阻塞直到超时,默认为true -->
+        <property name="blockWhenExhausted" value="false"/>
+    </bean>
+
+    <bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">
+        <constructor-arg>
+            <set>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST1}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT1}"/>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST2}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT2}"/>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST3}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT3}"/>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST4}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT4}"/>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST5}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT5}"/>
+                </bean>
+                <bean class="redis.clients.jedis.HostAndPort">
+                    <constructor-arg name="host" value="${REDIS_HOST6}"/>
+                    <constructor-arg name="port" value="${REDIS_PORT6}"/>
+                </bean>
+            </set>
+        </constructor-arg>
+        <!--设置连接超时时间 -->
+        <constructor-arg name="connectionTimeout" value="${REDIS_CONNECTION_TIMEOUT}"/>
+        <!--设置网络通信超时时间 -->
+        <constructor-arg name="soTimeout" value="${REDIS_SO_TIMEOUT}"/>
+        <!--设置集群访问密码 -->
+        <constructor-arg name="password" value="${REDIS_PASSWORD}"/>
+        <!--设置最大重试次数 -->
+        <constructor-arg name="maxAttempts" value="${REDIS_ATTEMPTS}"/>
+        <!--设置jedisPool配置 -->
+        <constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
+    </bean>
+
+    <bean id="jedisClientCluster" class="guo.ping.taotao.sso.component.impl.JedisClientCluster"/>
+    <!-- end -->
+
+</beans>
