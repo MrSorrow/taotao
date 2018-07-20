@@ -7,6 +7,7 @@ import guo.ping.taotao.mapper.TbUserMapper;
 import guo.ping.taotao.pojo.TbUser;
 import guo.ping.taotao.sso.component.JedisClient;
 import guo.ping.taotao.sso.service.LoginService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -66,4 +67,22 @@ public class LoginServiceImpl implements LoginService {
 
         return TaotaoResult.ok(token);
     }
+
+    /**
+     * 通过token查询用户信息
+     * @param token token
+     * @return 用户信息
+     */
+    @Override
+    public TaotaoResult getUserByToken(String token) {
+        String json = jedisClient.get(REDIS_SESSION_KEY + ":" + token);
+        if (StringUtils.isBlank(json)) {
+            return TaotaoResult.build(400, "用户session已经过期");
+        }
+        TbUser user = JsonUtils.jsonToPojo(json, TbUser.class);
+        //更新session的过期时间
+        jedisClient.expire(REDIS_SESSION_KEY + ":" + token, SESSION_EXPIRE);
+        return TaotaoResult.ok(user);
+    }
+
 }
