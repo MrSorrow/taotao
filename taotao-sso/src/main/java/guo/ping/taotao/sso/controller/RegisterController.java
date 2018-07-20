@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * 用户注册接口
+ * 用户注册
  */
 @Controller
 @RequestMapping("/user")

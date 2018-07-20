@@ -30,6 +30,18 @@
         </choose>
     </select>
 
+    <select id="selectUserByNameOrPwd" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT * FROM tb_user
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="password != null">
+                AND password = #{password}
+            </if>
+        </where>
+    </select>
+
     <insert id="insert" parameterType="guo.ping.taotao.pojo.TbUser">
         INSERT INTO tb_user
         (username, password, phone, email, created, updated) VALUES
