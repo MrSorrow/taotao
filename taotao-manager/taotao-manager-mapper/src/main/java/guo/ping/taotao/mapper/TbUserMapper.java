@@ -8,4 +8,6 @@ import java.util.Map;
 public interface TbUserMapper {
 
     List<TbUser> selectByKey(Map<String, Object> paramMap);
+
+    int insert(TbUser user);
 }
