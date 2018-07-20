@@ -23,6 +23,11 @@ public class JedisClientCluster implements JedisClient {
     }
 
     @Override
+    public Long del(String key) {
+        return jedisCluster.del(key);
+    }
+
+    @Override
     public Long hset(String key, String item, String value) {
         return jedisCluster.hset(key, item, value);
     }

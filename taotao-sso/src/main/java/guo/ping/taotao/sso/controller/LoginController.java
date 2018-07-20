@@ -53,4 +53,21 @@ public class LoginController {
             return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
         }
     }
+
+    @RequestMapping("/logout/{token}")
+    @ResponseBody
+    public Object logout(@PathVariable String token, String callback, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            TaotaoResult result = loginService.logout(token, request, response);
+            if (StringUtils.isNotBlank(callback)) {
+                MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(result);
+                mappingJacksonValue.setJsonpFunction(callback);
+                return mappingJacksonValue;
+            }
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
+        }
+    }
 }

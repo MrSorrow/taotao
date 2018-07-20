@@ -40,6 +40,14 @@ public class JedisClientSingle implements JedisClient {
     }
 
     @Override
+    public Long del(String key) {
+        Jedis jedis = getJedisResource(jedisPool);
+        Long result = jedis.del(key);
+        jedis.close();
+        return result;
+    }
+
+    @Override
     public Long hset(String key, String item, String value) {
         Jedis jedis = getJedisResource(jedisPool);
         Long result = jedis.hset(key, item, value);

@@ -64,7 +64,6 @@ public class LoginServiceImpl implements LoginService {
 
         // Token写入cookie 浏览器关闭就过期
         CookieUtils.setCookie(request, response, "TT_TOKEN", token);
-
         return TaotaoResult.ok(token);
     }
 
@@ -85,4 +84,19 @@ public class LoginServiceImpl implements LoginService {
         return TaotaoResult.ok(user);
     }
 
+    /**
+     * 退出登录
+     * @param token
+     * @return
+     */
+    @Override
+    public TaotaoResult logout(String token, HttpServletRequest request, HttpServletResponse response) {
+        Long result = jedisClient.del(REDIS_SESSION_KEY + ":" + token);
+        CookieUtils.deleteCookie(request, response, "TT_TOKEN");
+        if (result > 0) {
+            return TaotaoResult.ok("退出成功");
+        } else {
+            return TaotaoResult.ok("用户未登录");
+        }
+    }
 }
