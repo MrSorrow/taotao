@@ -67,6 +67,53 @@ public class CartServiceImpl implements CartService{
     }
 
     /**
+     * 更新购物车商品数量
+     * @param itemId
+     * @param num
+     * @param request
+     * @param response
+     * @return
+     */
+    @Override
+    public TaotaoResult updateCartItem(Long itemId, Integer num, HttpServletRequest request, HttpServletResponse response) {
+        List<CartItem> cartItemList = getCartItemList(request);
+        for (CartItem cartItem : cartItemList) {
+            if (cartItem.getId().longValue() == itemId) {
+                // 更新数量
+                cartItem.setNum(num);
+                break;
+            }
+        }
+        // 购物车商品列表写入cookie
+        CookieUtils.setCookie(request, response, "TT_CART", JsonUtils.objectToJson(cartItemList), CART_COOKIE_EXPIRE, true);
+
+        return TaotaoResult.ok();
+    }
+
+    /**
+     * 删除商品
+     * @param itemId
+     * @param request
+     * @param response
+     * @return
+     */
+    @Override
+    public TaotaoResult deleteCartItem(Long itemId, HttpServletRequest request, HttpServletResponse response) {
+        List<CartItem> cartItemList = getCartItemList(request);
+        for (CartItem cartItem : cartItemList) {
+            if (cartItem.getId().longValue() == itemId) {
+                // 删除
+                cartItemList.remove(cartItem);
+                break;
+            }
+        }
+        // 购物车商品列表写入cookie
+        CookieUtils.setCookie(request, response, "TT_CART", JsonUtils.objectToJson(cartItemList), CART_COOKIE_EXPIRE, true);
+
+        return TaotaoResult.ok();
+    }
+
+    /**
      * 从cookie中取出商品列表
      * @param request
      * @return

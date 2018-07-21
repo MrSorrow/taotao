@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,5 +35,17 @@ public class CartController {
         List<CartItem> cartItems = cartService.getCartItems(request);
         model.addAttribute("cartList", cartItems);
         return "cart";
+    }
+
+    @RequestMapping("/update/num/{itemId}/{num}")
+    @ResponseBody
+    public TaotaoResult updateCartItemNum(@PathVariable Long itemId, @PathVariable Integer num, HttpServletResponse response, HttpServletRequest request) {
+        return cartService.updateCartItem(itemId, num, request, response);
+    }
+
+    @RequestMapping("/delete/{itemId}")
+    public String deleteCartItem(@PathVariable Long itemId, HttpServletResponse response, HttpServletRequest request) {
+        TaotaoResult result = cartService.deleteCartItem(itemId, request, response);
+        return "redirect:/cart/cart.html";
     }
 }
