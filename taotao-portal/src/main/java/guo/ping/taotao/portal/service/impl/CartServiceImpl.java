@@ -35,7 +35,7 @@ public class CartServiceImpl implements CartService{
         boolean isHaveItem = false;
         for (CartItem cartItem : cartItemList) {
             // 如果存在数量相加
-            if (cartItem.getId() == itemId) {
+            if (cartItem.getId().longValue() == itemId) {
                 cartItem.setNum(cartItem.getNum() + num);
                 isHaveItem = true;
                 break;
@@ -59,6 +59,11 @@ public class CartServiceImpl implements CartService{
         CookieUtils.setCookie(request, response, "TT_CART", JsonUtils.objectToJson(cartItemList), CART_COOKIE_EXPIRE, true);
 
         return TaotaoResult.ok();
+    }
+
+    @Override
+    public List<CartItem> getCartItems(HttpServletRequest request) {
+        return getCartItemList(request);
     }
 
     /**

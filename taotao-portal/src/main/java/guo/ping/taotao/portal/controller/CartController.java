@@ -1,14 +1,17 @@
 package guo.ping.taotao.portal.controller;
 
 import guo.ping.taotao.common.pojo.TaotaoResult;
+import guo.ping.taotao.portal.pojo.CartItem;
 import guo.ping.taotao.portal.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * 购物车Controller
@@ -24,5 +27,12 @@ public class CartController {
     public String addCart(@PathVariable Long itemId, Integer num, HttpServletRequest request, HttpServletResponse response) {
         TaotaoResult result = cartService.addCart(itemId, num, request, response);
         return "cart-success";
+    }
+
+    @RequestMapping("/cart")
+    public String showCart(Model model, HttpServletRequest request) {
+        List<CartItem> cartItems = cartService.getCartItems(request);
+        model.addAttribute("cartList", cartItems);
+        return "cart";
     }
 }
