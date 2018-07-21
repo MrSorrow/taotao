@@ -302,7 +302,7 @@
 	
 	//加入购物车方法
 	function addCart() {
-		window.location.href="/cart/add/${item.id}.html?itemNum=" + $("#buy-num").val();
+		window.location.href="/cart/add/${item.id}.html?num=" + $("#buy-num").val();
 	}
 </script>
 </body>
