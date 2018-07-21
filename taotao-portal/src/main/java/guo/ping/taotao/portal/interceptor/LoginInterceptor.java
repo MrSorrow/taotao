@@ -29,6 +29,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return false;
         }
         // 如果取到用户信息，放行
+        httpServletRequest.setAttribute("user", user);
         return true;
     }
 
