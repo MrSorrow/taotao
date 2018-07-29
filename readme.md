@@ -1,4 +1,7 @@
-# 淘淘商城（IDEA实现）
+# 淘淘商城（IDEA版本）
+
+![](https://img.shields.io/badge/Java-1.8-blue.svg) ![](https://img.shields.io/badge/MySQL-5.6-blue.svg) ![](https://img.shields.io/badge/Tomcat-1.7-blue.svg) ![](https://img.shields.io/badge/Maven-3.3.9-blue.svg) ![](https://img.shields.io/badge/IDEA-2017.2-green.svg) ![](https://img.shields.io/badge/Windows-10-green.svg) ![](https://img.shields.io/badge/CentOS-6.4-green.svg) 
+
 项目源自于某培训机构，重新利用IDEA实现。项目涉及功能：
 1. 后台聚合工程搭建，ssm框架整合;
 2. 商品管理，商品列表展示，商品添加中的商品类目选择；
@@ -24,13 +27,6 @@
 9. 定时器：Quartz
 10. Web服务器：tomcat
 11. 工程管理：maven
-
-## 环境配置
-1. Win10、CentOS6.4
-2. Java 1.8
-3. Tomcat 7
-4. Mysql 5.6
-5. IDEA 2017.2
 
 ## 教程
 总体参考专栏博客：[项目实战之淘淘商城](https://blog.csdn.net/column/details/15737.html?&page=5)
